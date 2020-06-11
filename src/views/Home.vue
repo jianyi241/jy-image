@@ -24,6 +24,7 @@ import lunbo3 from '../assets/img/lunbo/lunbo3.jpg'
 import lunbo4 from '../assets/img/lunbo/lunbo4.jpg'
 import lunbo5 from '../assets/img/lunbo/lunbo5.jpg'
 import lunbo6 from '../assets/img/lunbo/lunbo6.jpg'
+import userApi from '../api/user'
 export default {
   name: 'Home',
   components: {
@@ -105,10 +106,15 @@ export default {
     },
     clearInterval () {
       clearInterval(this.timerInterval)
+    },
+    login () {
+      userApi.login({ username: 'xiaok', password: '123123' })
+      // this.$api.login()
     }
   },
   mounted () {
     // this.intervalImage()
+    this.login()
   }
 }
 </script>
